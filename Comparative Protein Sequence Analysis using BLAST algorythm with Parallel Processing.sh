@@ -1,4 +1,4 @@
-# Mini Project: Protein Sequence Analysis
+# Mini Project: Protein Sequence Analysis 
 
 # setting the working directory 
 cd ./mini_project/mouse_protein_sequences
@@ -39,8 +39,16 @@ blastp -query mouse.2.protein.faa -db zebrafish.1.protein.faa -out mouse2_output
 # Measure the time needed for BLAST with specified parameters and HPC threads
 # Explanation: This command runs BLAST with the specified number of threads and records the execution time.
 # For 12 threads: 
-time blastp -query mouse.protein.faa.output -db zebrafish.1.protein.faa -num_threads 12 > out
+time blastp -query mouse.protein.faa.output -db zebrafish.1.protein.faa -num_threads 12 > out_12_threads
+# For 8 threads: 
+time blastp -query mouse.protein.faa.output -db zebrafish.1.protein.faa -num_threads 8 > out_8_threads
 # For 4 threads: 
-time blastp -query mouse.protein.faa.output -db zebrafish.1.protein.faa -num_threads 4 > out
+time blastp -query mouse.protein.faa.output -db zebrafish.1.protein.faa -num_threads 4 > out_4_threads
+# For 2 threads:
+time blastp -query mouse.protein.faa.output -db zebrafish.1.protein.faa -num_threads 2 > out_2_threads
+# For 1 thread:
+time blastp -query mouse.protein.faa.output -db zebrafish.1.protein.faa -num_threads 1 > out_1_thread
 
-# Expected output: BLAST results will be saved in the 'out' file, and the time taken will be measured.
+# Expected output: BLAST results will be saved in the 'out_n_threads' file, and the time taken will be measured.
+
+
