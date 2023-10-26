@@ -1,16 +1,25 @@
-# Mini Project: Protein Sequence Analysis 
+####
+#In this script, we will use publically availlable data on mouse and zebrafish genome:
+# - first we will do some data exploratory analysis 
+# - then we will determine the time needed to complete the BLAST algorythm for 100 sequences and for the whole genome  
+####
 
+
+## Setting up the envoirment, logging into HPC cluster. 
+
+# logging with appropriate ssh key
 # setting the working directory 
 cd ./mini_project/mouse_protein_sequences
 
-# Download reference sequence for zebrafish
+## Downloading reference sequence for zebrafish
 curl -O ftp://ftp.ncbi.nih.gov/refseq/D_rerio/mRNA_Prot/zebrafish.1.protein.faa.gz
 
-# Similarly, download sequences 1 and 2 for the mouse
+# Similarly, downloading sequences 1 and 2 for the mouse- this sequences will be compared with reference
 curl -O ftp://ftp.ncbi.nih.gov/refseq/M_musculus/mRNA_Prot/mouse.1.protein.faa
 curl -O ftp://ftp.ncbi.nih.gov/refseq/M_musculus/mRNA_Prot/mouse.2.protein.faa
 
-# Count the number of sequences in the mouse1 and mouse2 files
+## Exploratory data analysis: 
+# Counting the number of sequences in the mouse1 and mouse2 files
 # Explanation: This uses grep to count the lines that start with ">" in the given files, indicating sequence headers.
 grep -c ">" mouse.1.protein.faa
 # Expected output: 42251
@@ -19,11 +28,11 @@ grep -c ">" mouse.2.protein.faa
 
 # Total number of sequences: 97034
 
-# Select the first 100 sequences using AWK
+# Selecting the first 100 sequences using AWK
 # Explanation: AWK is used to filter and copy the first 100 sequences from the input file.
 awk '/^>/{n++} n<=100' mouse.1.protein.faa > mouse.1.protein.copy.faa
 
-# Create a BLAST database for the zebrafish protein sequences
+# Creating a BLAST database for the zebrafish protein sequences
 # Explanation: This command uses makeblastdb to create a BLAST database from the zebrafish protein sequences.
 makeblastdb -in zebrafish.1.protein.faa -dbtype prot
 
