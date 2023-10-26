@@ -1,11 +1,11 @@
-####
+i####
 # In this script, we will use publically availlable data on mouse and zebrafish genome:
 # - first we will do some data exploratory analysis 
 # - then we will determine the time needed to complete the BLAST algorythm for 100 sequences and for the whole genome  
 ####
 
 
-## Setting up the envoirment, logging into HPC cluster. 
+## Setting up the enviornment, logging into HPC cluster. 
 
 # logging with appropriate ssh key
 # setting the working directory 
