@@ -1,4 +1,13 @@
-i####
+#Streamlining Genomic Analysis with Bash Scripting and HPC (High Performance Computing) 
+#using "okeanos" and "topola" clusters (ICM UW) 
+
+#A       A G       T G       A       A G       T G       A
+#| C   C | | C   C | | A   C | C   C | | C   C | | A   C |
+#| | T | | | | A | | | | G | | | T | | | | A | | | | G | |
+#| G   G | | G   G | | T   G | G   G | | G   G | | T   G |
+#T       T C       A C       T       T C       A C       T
+
+
 # In this script, we will use publically availlable data on mouse and zebrafish genome:
 # - first we will do some data exploratory analysis 
 # - then we will determine the time needed to complete the BLAST algorythm for 100 sequences and for the whole genome  
@@ -7,7 +16,7 @@ i####
 
 ## Setting up the enviornment, logging into HPC cluster. 
 
-# logging with appropriate ssh key
+# logging to the cluster with appropriate ssh key and credentials
 # setting the working directory 
 cd ./mini_project/mouse_protein_sequences
 
@@ -58,6 +67,12 @@ time blastp -query mouse.protein.faa.output -db zebrafish.1.protein.faa -num_thr
 # For 1 thread:
 time blastp -query mouse.protein.faa.output -db zebrafish.1.protein.faa -num_threads 1 > out_1_thread
 
-# Expected output: BLAST results will be saved in the 'out_n_threads' file, and the time taken will be measured.
+# Output: BLAST results will be saved in the 'out_n_threads' file, and the time taken will be measured.
+# Time will be in [h:min:s:ms] format.
 
+#A       A G       T G       A       A G       T G       A
+#| C   C | | C   C | | A   C | C   C | | C   C | | A   C |
+#| | T | | | | A | | | | G | | | T | | | | A | | | | G | |
+#| G   G | | G   G | | T   G | G   G | | G   G | | T   G |
+#T       T C       A C       T       T C       A C       T
 
