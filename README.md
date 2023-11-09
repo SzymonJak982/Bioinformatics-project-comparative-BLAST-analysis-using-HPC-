@@ -1,6 +1,9 @@
 
 # Overview
 In this project, I aim to assess the performance of the **BLAST** (Basic Local Alignment Search Tool) algorithm, a widely-used comparison tool in the field of bioinformatics, particularly for genomic and transcriptomic data analysis. My goal was to understand how does the execution time of the BLAST algorithm vary when different numbers of High-Performance Computing (HPC) threads are being utilised. I subsequently visualized the data and presented my research findings using a graphical representation.
+This repository consists of:
+- Shell script
+- Visualisation in Python 
 
 # Project Objectives
 BLAST Algorithm Evaluation: We will conduct a detailed evaluation of the BLAST algorithm's performance under varying conditions.
